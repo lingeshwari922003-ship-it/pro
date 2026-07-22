@@ -17,10 +17,10 @@ Pipeline{
             steps{
                 echo 'Running Java Program...'
                 bat 'java hello'
-                ]
             }
         }
-        Post{
+    }
+    Post{
             always{
                 echo 'Pipeline completed'
             }
