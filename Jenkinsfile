@@ -3,33 +3,32 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                echo 'Getting Source code.....'
+                echo 'Getting source code...'
                 checkout scm
             }
         }
-        stage('compile'){
+        stage ('compile'){
             steps{
-                echo 'compiling Java Program...'
-                bat 'javac hello.java'
+                echo 'compiling Java Program....'
+                bat 'javac Hello.java'
             }
         }
-        stage('Run'){
+        stage ('Run'){
             steps{
-                echo 'Running Java Program...'
-                bat 'java hello'
+                echo 'Running Java Program....'
+                bat 'java Hello'
             }
         }
     }
     post{
-            always{
-                echo 'Pipeline completed'
-            }
-            success{
-                echo 'Build Successful'
-            }
-            failure{
-                echo 'Build Failed'
-            }
+        always{
+            echo 'pipeline completed'
+        }
+        success{
+            echo 'Build successfully'
+        }
+        failure{
+            echo 'Build failed'
         }
     }
-    
+}
