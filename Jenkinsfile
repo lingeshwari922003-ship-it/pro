@@ -10,13 +10,13 @@ pipeline{
         stage ('compile'){
             steps{
                 echo 'compiling Java Program....'
-                bat 'javac Hello.java'
+                bat 'javac hello.java'
             }
         }
         stage ('Run'){
             steps{
                 echo 'Running Java Program....'
-                bat 'java Hello'
+                bat 'java hello'
             }
         }
     }
